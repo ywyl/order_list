@@ -1,0 +1,16 @@
+.cart-goods-content {
+	display: flex;
+
+	.detail {
+		flex: 1;
+		margin-top: 15px;
+		
+		.name, .price, .counts {
+			padding: 5px;
+		}
+
+		.operation button {
+			width: 30px;
+		}
+	}
+}
