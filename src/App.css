@@ -20,6 +20,7 @@ li {
 
     .goods-item {
       margin: 5px 16px;
+      cursor: pointer;
     }
   }
 

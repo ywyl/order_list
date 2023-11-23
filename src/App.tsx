@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 
 import Goods from "./Goods/index";
-import { mockData } from "./mock/index";
+import { mockGoodsData } from "./mock/index";
 
 function App() {
   const bottomElement = useRef<HTMLDivElement | null>(null);
@@ -13,7 +13,7 @@ function App() {
   const initgoodsList = () => {
     const temp: Array<Goods> = [];
     for (let i = 0; i < 30; i++) {
-      temp.push(mockData);
+      temp.push(mockGoodsData);
     }
     setGoodsList(temp);
   };
@@ -21,7 +21,7 @@ function App() {
   const addItem = (addNum: number, curNum: number) => {
     const temp = [...goodsList];
     for (let i = curNum; i < curNum + addNum; i++) {
-      temp.push(mockData);
+      temp.push(mockGoodsData);
     }
     setGoodsList(temp);
   };
@@ -43,12 +43,12 @@ function App() {
   return (
     <>
       <div className="header">
-        <Link to='/shoppingcart'>{'购物车'}</Link>
+        <Link to='/shopping-cart'>{'购物车'}</Link>
       </div>
       <div className="main">
         <ul className="goods-list">
           {goodsList.map((item) => (
-            <li key={item.id} className="goods-item">
+            <li key={item.id} className="goods-item" onClick={() => {window.location.href = '/goods-info'}}>
               <Goods goods={item}></Goods>
             </li>
           ))}
